@@ -59,10 +59,8 @@ const orbit = document.querySelector(".draw-circle")
 const secondImageContainer = document.querySelector(".bot-sec-image-container")
 function handleTransitionEnd(){
     botImageContainer.style.transition = "500ms"
-    // secondImageContainer.style.height = "16rem"
 }
 document.addEventListener("wheel", () => {
-    // if (!scrolled) {
         var y = event.deltaY;
         if(y>0){
             botImageContainer.removeEventListener("transitionend", handleTransitionEnd);
@@ -80,7 +78,6 @@ document.addEventListener("wheel", () => {
         }
         if(y<0){
 
-            // })
             botImageContainer.style.width = "40rem";
             botImageContainer.style.height = "20rem";
             
@@ -90,10 +87,8 @@ document.addEventListener("wheel", () => {
             botImage.style.height = "22rem"
             botImageContainer.addEventListener("transitionend",handleTransitionEnd)
         }
-    // }
     
 });
-// chatPart start
 
 
 
@@ -165,7 +160,6 @@ function effectsMessageHandler(){
             <div>پیچیدگی فنی</div>
             <div>کیفیت پاسخ</div>
             <div>حریم خصوصی و امنیت</div>`,.2)
-    // typeMessage(botMessageElement, message);
 }
 function scrollChatPart(element){
     if(parseInt(window.getComputedStyle(element).height) <= parseInt(window.getComputedStyle(chatPart).height)){
@@ -200,15 +194,9 @@ userInput.addEventListener('keypress', function(event) {
     const message = event.target.value;
     if (event.key === 'Enter' && message.trim()!=="") {
         console.log(message.trim())
-        // if (message.trim() == 'چت بات چیست و چه کاربردی دارد؟') {
-            // addUserMessage(message);
-            // event.target.value = '';
-        // }
-        // else {
             addUserMessage(message);
             event.target.value = '';
             setTimeout(() => addBotMessage("سلام! چطور می‌توانم به شما کمک کنم؟"), 1000);
-        // }
     }
 });
 
@@ -225,6 +213,8 @@ definedMessagesSet.forEach(element => {
         if(element.id == "history-of-chatbots"){
             setTimeout(() =>{
                 chatMessages.innerHTML += `                <div class="history-container">
+                    <button class="guide-key" id="left-key-guide"><</button>
+                    <button class="guide-key" id="right-key-guide">></button>
                     <div class="history-item">Turing test 1966</div>
                     <div class="history-item">Eliza 1966</div>
                     <div class="history-item">Parry 1972</div>
@@ -236,6 +226,7 @@ definedMessagesSet.forEach(element => {
                     <div class="history-item">Copilot 2023</div>                       
                     <hr class="history-time-line">
                     <div class="locator">📍</div>
+                    
                   </div>
             </div>`
             drawHistoryPart()
@@ -345,34 +336,48 @@ ChatGPT از برترین چت‌بات‌های موجود در حال حاضر
         locator.style.left = `${locatorLeft}px`;
         botHistoryMessageHandler(locatorIndex)
     }
+    function rightMoveLocator(){
+        if(parseInt(historyItems.length)-1 > locatorIndex){
+        historyItems[locatorIndex].style.color = "";
+        locatorIndex ++
+        historyItems[locatorIndex].style.color = "black";
+        moveLocator()
+        }
+        else{
+            historyItems[locatorIndex].style.color = "";
+            locatorIndex = 0
+            historyItems[locatorIndex].style.color = "black";
+            moveLocator()
+        }
+    }
+    function leftMoveLocator(){
+        if(0 < locatorIndex){
+            historyItems[locatorIndex].style.color = "";
+            locatorIndex --
+            historyItems[locatorIndex].style.color = "black";
+            moveLocator()
+        }
+        else{
+            historyItems[locatorIndex].style.color = "";
+            locatorIndex = parseInt(historyItems.length)-1
+            historyItems[locatorIndex].style.color = "black";
+            moveLocator()
+        }
+    }
+    leftKeyButton = document.getElementById("left-key-guide")
+    rightKeyButton = document.getElementById("right-key-guide")
+    leftKeyButton.addEventListener("click",()=>{
+        leftMoveLocator()
+    })
+    rightKeyButton.addEventListener("click",()=>{
+        rightMoveLocator()
+    })
     document.addEventListener("keydown", function(event) {  
         if (event.key === "ArrowRight") {
-            if(parseInt(historyItems.length)-1 > locatorIndex){
-                historyItems[locatorIndex].style.color = "";
-                locatorIndex ++
-                historyItems[locatorIndex].style.color = "black";
-                moveLocator()
-            }
-            else{
-                historyItems[locatorIndex].style.color = "";
-                locatorIndex = 0
-                historyItems[locatorIndex].style.color = "black";
-                moveLocator()
-            }
+                rightMoveLocator()
         }
         else if (event.key === "ArrowLeft") {
-            if(0 < locatorIndex){
-                historyItems[locatorIndex].style.color = "";
-                locatorIndex --
-                historyItems[locatorIndex].style.color = "black";
-                moveLocator()
-            }
-            else{
-                historyItems[locatorIndex].style.color = "";
-                locatorIndex = parseInt(historyItems.length)-1
-                historyItems[locatorIndex].style.color = "black";
-                moveLocator()
-            }
+            leftMoveLocator()
         }
         
     })

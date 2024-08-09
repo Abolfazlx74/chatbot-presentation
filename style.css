@@ -37,16 +37,17 @@ a{
     align-items: center;
     flex-wrap: wrap;
     opacity: .9;
+    position: relative;
 }
-/* .show-shapes-part{
-    width: 20rem;
-    height: 13rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    opacity: .9;
-} */
+
+#scroll-reminder{
+    position: absolute;
+    top: 10%;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    opacity: .8;
+}
+
 .show-bot-image-part{
     width: 40rem;
     display: flex;
@@ -66,12 +67,10 @@ a{
     position: absolute;
     width: 263.4px;
     height: 0;
-    /* rotate: 180deg; */
     overflow: hidden;
     transition: 1000ms;
 }
 #bot-sec-image{
-    /* rotate: 180deg; */
     margin-top: 16px;
     width: 263.4px;
     margin-left: .8%;
@@ -79,9 +78,6 @@ a{
 }
 /* added */
 
-.bot-image-container {
-    position: relative;
-}
 
 .orbit-images {
     position: absolute;
@@ -147,7 +143,6 @@ a{
     width: 200px;
     height: 80px;
     animation: fadeInOut 1.5s infinite;
-    /* background-color: #fff; */
 }
 
 
@@ -219,7 +214,6 @@ a{
     cursor: pointer;
 }
 #clear-button:hover{
-    /* background-color: whitesmoke; */
     opacity: .8;
 }
 
@@ -244,11 +238,9 @@ a{
 #chatbot-fixed-logo{
     width: 34rem;
     filter: blur(3px);
-    /* height: 48rem; */
 }
 /* chatpart */
 .chat-part{
-    /* margin-top:10%; */
     width: 80%;
     position: absolute;
     left: 10%;
@@ -275,7 +267,6 @@ a{
     display: flex;
     position: relative;
     margin-top: .5%;
-    /* flex-wrap: wrap; */
 }
 .user-profile, .bot-profile{
     width: 50px;
@@ -292,7 +283,6 @@ a{
     border-radius: 5px;
     margin-right:60px ;
     width: 90%;
-    /* max-width: 70%; */
 }
 .user-message {
 
@@ -380,7 +370,7 @@ a{
 #halfWidthImage{
     width: 700px;
 }
-/*  */
+/* end */
 .history-container{
     margin: auto;
     display: flex;
@@ -389,6 +379,35 @@ a{
     position: relative;
     direction: ltr;
     font-size: 20px;
+    margin-top: 20px;
+    justify-content: center;
+}
+.guide-key{
+    position: absolute;
+    top: 3%;
+    font-size: 40px;
+    font-weight:600;
+    border: none;
+    animation: spinButtons 3s;
+    transition: 1000ms; 
+}
+.guide-key:hover{
+    cursor: pointer;
+    opacity: .7;
+    color: white;
+    background-color: black;
+}
+@keyframes spinButtons {
+    0% { transform: rotate(0deg); }
+    50% { color: white;background-color: black;}
+    100% { transform: rotate(360deg); }
+}
+
+#left-key-guide{
+    left: -5%;
+}
+#right-key-guide{
+    right: -5%;
 }
 .history-item{
     margin-top: 4%;
@@ -422,7 +441,6 @@ a{
 }
 .effects div{
     display: flex;
-    /* text-align: center; */
     width: 100%;
     align-items: center;
     justify-content: center;
