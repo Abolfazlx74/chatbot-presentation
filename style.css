@@ -5,7 +5,7 @@ body {
 }
 @font-face {
     font-family: "B Koodak";
-    src: url(B\ Koodak\ Bold_0.ttf);
+    src: url(fonts/B\ Koodak\ Bold_0.ttf);
 }
 a{
     text-decoration: none;

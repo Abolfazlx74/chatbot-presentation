@@ -106,7 +106,7 @@ function addUserMessage(message,delay = false) {
     const userProfile = document.createElement('img');
     userProfile.classList.add("user-profile")
     userMessagecontainer.classList.add("user-message-container")
-    userProfile.src = "user.svg"
+    userProfile.src = "chatbot-pictures/user.svg"
     userMessageElement.classList.add('user-message');
     chatMessages.appendChild(userMessagecontainer);
     userMessagecontainer.appendChild(userProfile);
@@ -125,7 +125,7 @@ function addBotMessage(message,delayValue=0,specialClassName=false) {
     botMessageElement.classList.add('bot-message');
     botProfile.classList.add("bot-profile")
     botMessagecontainer.classList.add("bot-message-container")
-    botProfile.src = "bot.svg"
+    botProfile.src = "chatbot-pictures/bot.svg"
     botMessageElement.classList.add('bot-message');
     chatMessages.appendChild(botMessagecontainer);
     botMessagecontainer.appendChild(botProfile);
@@ -140,7 +140,7 @@ function effectsMessageHandler(){
     botMessageElement.classList.add('bot-message');
     botProfile.classList.add("bot-profile")
     botMessagecontainer.classList.add("bot-message-container")
-    botProfile.src = "bot.svg"
+    botProfile.src = "chatbot-pictures/bot.svg"
     botMessageElement.classList.add('bot-message');
     chatMessages.appendChild(botMessagecontainer);
     botMessagecontainer.appendChild(botProfile);
@@ -155,12 +155,12 @@ function effectsMessageHandler(){
     botMessageElement.appendChild(effects)
     effects.appendChild(advantages)
     effects.appendChild(disadvantages)
-    typeMessage(advantages,`            <div><img src="chatbot-images/like.svg" alt="">مزایا و امکانات چت‌بات</div>
+    typeMessage(advantages,`            <div><img src="chatbot-pictures/like.svg" alt="">مزایا و امکانات چت‌بات</div>
             <div>پاسخگویی ۲۴/۷</div>
             <div>افزایش بهره‌ وری</div>
             <div>پاسخ سریع</div>
             <div>کاهش هزینه</div>`,.2)
-        typeMessage(disadvantages,`            <div><img src="chatbot-images/unlike.svg" alt=""> معایب و چالش‌های  پیاده‌سازی چت‌بات</div>
+        typeMessage(disadvantages,`            <div><img src="chatbot-pictures/unlike.svg" alt=""> معایب و چالش‌های  پیاده‌سازی چت‌بات</div>
             <div>محدودیت‌های تفاوت‌سنجی</div>
             <div>پیچیدگی فنی</div>
             <div>کیفیت پاسخ</div>
@@ -246,7 +246,7 @@ definedMessagesSet.forEach(element => {
             setTimeout(() =>addBotMessage(`چت بات چیست؟
 <br>چت‌بات یک نوع نرم‌افزار است که از هوش مصنوعی و پردازش زبان طبیعی برای برقراری تعامل با کاربران استفاده می‌کند. این سیستم‌ها می‌توانند به صورت متنی یا صوتی با کاربران ارتباط برقرار کنند و به سوالات و درخواست‌های آنها پاسخ دهند. از جمله مزیت‌های استفاده از چت‌بات، صرفه‌جویی در زمان و ارتقاء تجربه کاربری می‌باشد. با استفاده از این نرم‌افزارها، کاربران قادرند به راحتی و بدون نیاز به تعامل مستقیم با انسان‌ها، سوالات خود را مطرح کرده و نیازهایشان را برطرف کنند.
 <br>بیایید فرض کنیم که شما صاحب یک فروشگاه گل هستیدو شما تنها کارمند هستید، شاید وقتی برای پاسخ به پرسش‌های متداول مشتریان، مانند ساعت بازگشایی، موجودی گل‌ها و نحوه تماس با شما، ندارید. اینگونه که مشتری شما نیاز به تماس با شما دارد، اما شما مشغول هستید و نمی‌توانید تلفن را جواب دهید. پس چه کاری می‌توانیم بکنیم تا این مشکل را حل کنیم؟ اینجاست که فلورا، چت‌بات گل، وارد می‌شود. حالا اگر یک مشتری سوال ساده‌ای داشته باشد، بگوییم او فقط می‌خواهد ساعت بازگشایی را بداند. او می‌تواند از فلورا بپرسد "خب، چه ساعتی باز میشوید؟" و فلورا قادر خواهد بود پاسخ مناسبی ارائه دهد. همه این‌ها بدون اینکه بخواهیم با چت‌بات یا مشتری تعامل داشته باشیم انجام میشود، بنابراین آزاد هستیم که کاری که دوست داریم را انجام دهیم، که یعنی طراحی ترتیب‌ گل ها.
-<br><div class="halfWidthImageContainer"><img src="chatbot-images/Digital-Banking-Across-Channels-2-2.png" id="halfWidthImage" alt="">
+<br><div class="halfWidthImageContainer"><img src="chatbot-pictures/Digital-Banking-Across-Channels-2-2.png" id="halfWidthImage" alt="">
 </div>`),700)
         }
         if(element.id == "chatbot-components"){
@@ -270,7 +270,7 @@ definedMessagesSet.forEach(element => {
 <br> 3.تصمیم‌گیری: بر اساس تفسیر ورودی، چت‌بات بر اساس الگوریتم هایش تصمیم می‌گیرد که چه پاسخی را به کاربر ارسال کند. 
 <br> 4. تولید پاسخ: در این مرحله، چت‌بات پاسخ مناسب را بر اساس تصمیم‌گیری‌های اخذ شده تولید می‌کند و آن را به کاربر ارسال می‌کند.
 <br> 5.نمایش پاسخ به کاربر: در نهایت، پاسخ تولید شده توسط چت‌بات به کاربر نمایش داده می‌شود، که می‌تواند شامل متن، صدا یا تصویر باشد.
-<br> <img src="chatbot-images/1.gif" alt="aaa" id='structure-pic'>`),700)
+<br> <img src="chatbot-pictures/1.gif" alt="chatbot-structure" id='structure-pic'>`),700)
         }
         if(element.id == "advantages-and-disadvantages"){
             setTimeout(() =>{effectsMessageHandler();},700)
